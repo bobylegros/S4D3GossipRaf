@@ -1,0 +1,6 @@
+<h1>Post a Gossip</h1>
+<%= form_for @gossip do |f| %>
+  <h3>Author</h3><%= f.text_field :anonimous_autor %>
+  <h3>My Gossip</h3><%= f.text_area :content, size: "60x12" %>
+  <%= f.submit "Create" %>
+<% end %>

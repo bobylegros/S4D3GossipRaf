@@ -1,1 +1,22 @@
-<h1>Gossip Index</h1></h1>
+
+<h1>Listing gossips</h1>
+
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Gossip</th>
+  </tr>
+
+  <% @gossips.each do |gossip| %>
+    <tr>
+      <td><%= gossip.anonimous_autor %></td>
+      <td><%= gossip.content %></td>
+      <td><%= link_to 'Show', gossip_path(gossip) %></td>
+      <td><%= link_to 'Edit', edit_gossip_path(gossip) %></td>
+      <td><%= link_to 'Destroy', gossip_path(gossip),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Create New Gossip', new_gossip_path(@gossip) %>
